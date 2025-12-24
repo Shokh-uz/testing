@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
 <header class="navigation">
   <nav class="navbar">
 
@@ -19,13 +18,13 @@
   
 
     <div class="dropdown">
-      <button class="nav-link-drop-btn">💱</button>
+      <button class="nav-link-drop-btn">Currency</button>
       <div class="dropdown-menu">
         <a href="#">SUM</a>
         <a href="#">USD</a>
         <a href="#">RUB</a>
       </div>
-      <button class="nav-link-drop-btn">🌐</button>
+      <button class="nav-link-drop-btn">Language</button>
       <div class="dropdown-menu">
         <a href="#">UZ</a>
         <a href="#">Eng</a>
@@ -33,7 +32,7 @@
       </div>
     </div>
 
-    <a href="kirish.html" class="profile-btn">👤</a>
+    <a href="kirish.html" class="profile-btn">Kirish</a>
 
   </nav>
 </header>
@@ -64,7 +63,7 @@
         <div class="card-bottom">
           <span class="price">$1,299</span>
           <div class="card-actions">
-            <button class="btn-outline">So'rang</button>
+            <button href="chatting.html" class="btn-outline">So'rang</button>
             <button class="btn-primary">Buyurtma</button>
           </div>
         </div>
@@ -90,7 +89,7 @@
         <div class="card-bottom">
           <span class="price">$1,299</span>
           <div class="card-actions">
-            <button class="btn-outline">So'rang</button>
+            <button href="chatting.html" class="btn-outline">So'rang</button>
             <button class="btn-primary">Buyurtma</button>
           </div>
         </div>
@@ -223,14 +222,8 @@
   </div>
 
 </div>
-<script>
-  const btn = document.querySelector('.drop-btn');
-  const menu = document.querySelector('.dropdown-menu');
 
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>

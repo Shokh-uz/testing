@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: #0a4d68 ;
   background-position: center;
   background-size: cover;
 }
@@ -15,10 +15,15 @@ body {
 /* ===== NAVBAR ===== */
 .navigation {
   width: 100%;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
 }
 
 .navbar {
@@ -35,14 +40,14 @@ body {
 .logo {
   font-size: 32px;
   font-weight: 700;
-  color: #1f477a;
+  color: #3ba6ff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-btn-Aloqa,
 .nav-btn-Bosh-sahifa {
   text-decoration: none;
-  color: #000;
+  color: white;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -67,14 +72,50 @@ body {
 
 .profile-btn {
   padding: 8px 16px;
-  border: 1px solid #ccc;
+  box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.2);
   border-radius: 999px;
   text-decoration: none;
   font-size: 14px;
   color: #000;
+  background-color: white;
+  transition: 0.15s;
+}
+.profile-btn:hover {
+  opacity: 0.85;
 }
 
 /* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 80px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: none; /* boshida yopiq */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f2f2;
+}
+
+/* ochilgan holat */
+.dropdown-menu.active {
+  display: block;
+}
+
 .dropdown {
   position: relative;
   display: flex;
@@ -188,7 +229,7 @@ body {
 .xamyonbob-joylar, 
 .tropik-joylar,
 .Tabiat-joylar {
-  color: #1f477a;
+  color: white;
   font-size: 28px;
   font-weight: bold;
   margin: 40px 0 20px 0;
@@ -274,18 +315,25 @@ body {
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 16px;
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 8px 16px;
+  box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  text-decoration: none;
   font-size: 14px;
+  color: #fffa91;
+  background-color: #4868cf;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
 }
+.btn-outline:hover {
+  opacity: 0.85;
+}
+
 
 .btn-primary {
   background-color: rgb(187, 169, 10);
-  color: white;
+  color: #fffa91;
   border-radius: 16px;
   padding: 8px 12px;
   border: none;
@@ -293,9 +341,6 @@ body {
   font-size: 14px;
 }
 
-.btn-outline:hover {
-  background-color: rgba(255,255,255,0.1);
-}
 
 .btn-primary:hover {
   background-color: rgb(170, 152, 8);
@@ -312,19 +357,36 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  
 }
 
 /* ===== CALCULATOR ===== */
 .hisoblagich {
-  background-color: rgb(12, 55, 150);
+
   color: white;
   border-radius: 16px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
   width: 90%;
   max-width: 420px;
   padding: 24px;
   margin: 100px auto;
   display: block;
+  
+  padding: 16px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .boshlanish {
@@ -456,7 +518,7 @@ body {
 
 .bosh {
   font-size: 32px;
-  color: #1f477a;
+  color: white;
   margin-bottom: 10px;
 }
 
