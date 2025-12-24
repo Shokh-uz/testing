@@ -10,6 +10,7 @@ body {
   background-color: #0a4d68 ;
   background-position: center;
   background-size: cover;
+   padding-top: 80px; 
 }
 
 /* ===== NAVBAR ===== */
@@ -23,7 +24,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-
+  
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar {
