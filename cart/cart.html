@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>🛒 Savatcha</h1>
+<div id="cart"></div>
+
+<script>
+  const cartDiv = document.getElementById('cart');
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    cartDiv.innerHTML = '<p>Cart bo‘sh 😴</p>';
+  } else {
+    cart.forEach(item => {
+      cartDiv.innerHTML += `
+        <div style="margin-bottom:20px">
+          <h3>${item.title}</h3>
+          <p>Narx: $${item.price}</p>
+          <p>Soni: ${item.qty}</p>
+        </div>
+        <hr>
+      `;
+    });
+  }
+</script>
+
+</body>
+</html>
