@@ -114,34 +114,24 @@ function changeCurrency(currency) {
     }
   });
 }
-/* Cart */
-const cartButtons = document.querySelectorAll('.add-to-cart');
 
-cartButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const product = {
-      id: btn.dataset.id,
-      title: btn.dataset.title,
-      price: Number(btn.dataset.price),
-      qty: 1
-    };
+/* ==== Darkmode ==== */
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('theme-switch')
 
-    addToCart(product);
-  });
-});
-
-function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  const existing = cart.find(item => item.id === product.id);
-
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push(product);
-  }
-
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  alert('🛒 Cartga qo‘shildi');
+const enableDarkmode = () => {
+  document.body.classList.add('darkmode')
+  localStorage.setItem('darkmode', 'active')
 }
+
+const disableDarkmode = () => {
+  document.body.classList.remove('darkmode')
+  localStorage.setItem('darkmode', null)
+}
+
+if (darkmode === "active") enableDarkmode()
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem('darkmode')
+  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+})

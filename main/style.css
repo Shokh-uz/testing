@@ -1,5 +1,88 @@
+:root {
+  /* ===== BACKGROUND ===== */
+  --bg-main: #f4f7fb;
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --bg-glass-light: rgba(255, 255, 255, 0.85);
+  --bg-card: #ffffff;
+
+  /* ===== PRIMARY COLORS ===== */
+  --primary: #2563eb;        /* blue */
+  --primary-dark: #1e40af;
+  --primary-light: #60a5fa;
+  --light-blue: #bde0eb
+
+  /* ===== ACCENT / HIGHLIGHT ===== */
+  --accent-yellow: #facc15;
+  --accent-yellow-dark: #eab308;
+  --accent-red: #ef4444;
+
+  /* ===== TEXT ===== */
+  --text-white: #ffffff;
+  --text-muted: #6b7280;
+  --text-dark: #111827;
+  --text-gray: #4b5563;
+  --text-fulldark: black;
+
+  /* ===== BUTTONS ===== */
+  --btn-outline-bg: #2563eb;
+  --btn-outline-text: #ffffff;
+
+  /* ===== BORDERS & SHADOWS ===== */
+  --border-glass: rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  /* ===== STATUS / LEVELS ===== */
+  --bronze: #cd7f32;
+  --silver: #9ca3af;
+  --gold: #fbbf24;
+  --platinum: #e5e7eb;
+}
+
+.darkmode {
+  /* ===== BACKGROUND ===== */
+  --bg-main: #050b14;
+  --bg-glass: rgba(255, 255, 255, 0.08);
+  --bg-glass-light: rgba(255, 255, 255, 0.12);
+  --bg-card: #0b1220;
+
+  /* ===== PRIMARY COLORS ===== */
+  --primary: #00e5ff;          /* neon cyan */
+  --primary-dark: #00bcd4;
+  --primary-light: #7df9ff;
+
+  /* ===== ACCENT / HIGHLIGHT ===== */
+  --accent-yellow: #ffe600;    /* neon yellow */
+  --accent-yellow-dark: #f5d000;
+  --accent-red: #ff3b3b;       /* neon red */
+
+  /* ===== TEXT ===== */
+  --text-white: #e5faff;
+  --text-muted: rgba(229, 250, 255, 0.65);
+  --text-dark: #0f172a;
+  --text-gray: #94a3b8;
+  --text-fulldark: #fff;
+
+  /* ===== BUTTONS ===== */
+  --btn-outline-bg: #00e5ff;
+  --btn-outline-text: #020617;
+
+  /* ===== BORDERS & SHADOWS ===== */
+  --border-glass: rgba(0, 229, 255, 0.35);
+  --shadow-soft: 0 0 25px rgba(0, 229, 255, 0.25);
+  --shadow-card: 0 0 18px rgba(0, 229, 255, 0.35);
+
+  /* ===== STATUS / LEVELS ===== */
+  --bronze: #ff9f43;
+  --silver: #c7d2fe;
+  --gold: #ffe600;
+  --platinum: #67e8f9;
+}
+
 /* ===== BASE ===== */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +90,7 @@
 }
 
 body {
-  background-color: #0a4d68 ;
+  background-color: var(--bg-main);
   background-position: center;
   background-size: cover;
    padding-top: 80px; 
@@ -16,22 +99,25 @@ body {
 /* ===== NAVBAR ===== */
 .navigation {
   width: 100%;
-    background: rgba(255, 255, 255, 0.15);
+  background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border-glass);
 
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px var(--shadow-soft);
   
- position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 }
-
+.tel1{
+  position: absolute;
+  left: 40px;
+}
 .navbar {
   max-width: 1300px;
   margin: auto;
@@ -43,17 +129,47 @@ body {
   flex-wrap: wrap;
 }
 
+#theme-switch{
+  height: 25px;
+  width: 50px;
+  padding: 0;
+  border-radius: 25px;
+  background-color: var(--text-fulldark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  border: none;
+  box-shadow: 1px 1px 30px var(--btn-outline-bg);
+
+}
+
+#theme-switch ion-icon{
+  fill: var(--primary-light)
+}
+#theme-switch ion-icon:last-child{
+  display: none;
+}
+.darkmode #theme-switch ion-icon:first-child{
+ display: none;
+}
+.darkmode #theme-switch ion-icons:last-child{
+  display: block;
+}
+
 .logo {
   font-size: 32px;
   font-weight: 700;
-  color: #3ba6ff;
+  color: var(--primary-light);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-btn-Aloqa,
 .nav-btn-Bosh-sahifa {
   text-decoration: none;
-  color: white;
+  color: var(--text-fulldark);
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -67,7 +183,7 @@ body {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #1f477a;
+  background: var(--primary);
   transition: 0.3s;
 }
 
@@ -77,18 +193,25 @@ body {
 }
 
 .profile-btn {
+  position: absolute;
+  right: 80px;
   padding: 8px 16px;
-  box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 10px 30px var(--btn-outline-bg);
   border-radius: 999px;
   text-decoration: none;
   font-size: 14px;
   color: #000;
-  background-color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: var(--text-white);
   transition: 0.15s;
 }
-.profile-btn:hover {
-  opacity: 0.85;
+.profile-btn:hover{
+  opacity: 0.7;
 }
+
+
+
 
 /* ===== DROPDOWN ===== */
 .dropdown {
@@ -101,7 +224,7 @@ body {
   box-sizing:border-box;
 }
 .select{
-  background-color: white;
+  background-color: var(--btn-outline-bg);
   color: black;
   display: flex;
   justify-content: space-between;
@@ -114,7 +237,7 @@ body {
 }
 .select-clicked{
   border: 2px black solid;
-  box-shadow: 0 0 0.8em grey;
+  box-shadow: 0 0 0.8em var(--text-gray);
 }
 .select:hover{
   opacity: 0.85;
@@ -124,7 +247,7 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid #fff;
+  border-top: 6px solid var(--text-white);
   transition: 0.3s;
 }
 .caret-rotate{
@@ -132,12 +255,12 @@ body {
 }
 .menu{
   list-style: none;
-  padding: 0.2em 0.5em;
-  background: darkblue;
+  padding: 5px;
+  background: var(--primary-dark);
   border: 1px black solid;
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0.2);
+  box-shadow: 0 0.5em 1em var(--shadow-card);
   border-radius: 0.5em;
-  color: white;
+  color: var(--text-white);
   position: absolute;
   top: 3em;
   left: 50%;
@@ -158,21 +281,30 @@ body {
   background: black;
 }
 .active{
-  background: lightcoral;
+  background: var(--primary-light);
 }
 .menu-open{
   display: block;
   opacity: 1;
 }
 #cart{
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 1px 1px 30px var(--btn-outline-bg);
   font-size: 20px;
   padding: 10px;
   border-radius: 24px;
-  background-color: rgb(194, 209, 214);
+  background-color: var(--text-white);
+  height: 35px;
+  width: 40px;
+  position: absolute;
+  right: 140px;
 }
 
 /* ===== SEARCH ===== */
+
+.kerak{
+display: none;
+}
+
 .orta {
   max-width: 1200px;
   margin: 0 auto;
@@ -183,15 +315,15 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--bg-glass-light);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 16px;
   border-radius: 20px;
   max-width: 900px;
   margin: 20px auto;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);}
+  box-shadow: 0 8px 32px 0 var(--primary-dark);
+  border: 1px solid var(--border-glass);}
 
 .qidiruv-qism {
   display: flex;
@@ -206,40 +338,44 @@ body {
 .odam-soni {
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-muted);
   font-size: 16px;
   flex: 1;
   min-width: 150px;
 }
 
 .qidiruv-btn {
-  background-color: #1f477a;
+  background-color: var(--bg-card);
   padding: 12px 20px;
   border-radius: 8px;
   border: none;
   font-size: 16px;
-  color: white;
+  color: var(--text-white);
   cursor: pointer;
   white-space: nowrap;
 }
 
 .qidiruv-btn:hover {
-  background-color: #16355a;
+  background-color: var(--primary-dark);
 }
 
 /* ===== CARDS SECTIONS ===== */
-.Birinchi-qator,
+.Birinchi-qator{
+  margin-top: 100px;
+}
+
 .Ikkinchi-qator,
 .Uchinchi-qator,
 .Tortinchi-qator {
   margin-bottom: 60px;
 }
 
+
 .mashhur-joylar, 
 .xamyonbob-joylar, 
 .tropik-joylar,
 .Tabiat-joylar {
-  color: white;
+  color: var(--text-fulldark);
   font-size: 28px;
   font-weight: bold;
   margin: 40px 0 20px 0;
@@ -261,8 +397,8 @@ body {
   width: 300px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #1f477a;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background-color: var(--primary-light);
+  box-shadow: 0 5px 15px var(--shadow-card);
   
 }
 
@@ -314,8 +450,8 @@ Z);
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #ff4757;
-  color: white;
+  background: var(--accent-red);
+  color: var(--text-white);
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 12px;
@@ -327,7 +463,7 @@ Z);
   display: flex;
   flex-direction: column;
   gap: 8px;
-  color: white;
+  color: var(--text-white);
 }
 
 .location {
@@ -361,8 +497,8 @@ Z);
   border-radius: 999px;
   text-decoration: none;
   font-size: 14px;
-  color: #fffa91;
-  background-color: #4868cf;
+  color: var(--btn-outline-text);
+  background-color: var(--btn-outline-bg);
   border: none;
   cursor: pointer;
   transition: 0.15s;
@@ -373,8 +509,8 @@ Z);
 
 
 .btn-primary {
-  background-color: rgb(187, 169, 10);
-  color: #fffa91;
+  background-color: var(--accent-yellow);
+  color: var(--btn-outline-text);
   border-radius: 16px;
   padding: 8px 12px;
   border: none;
@@ -384,13 +520,13 @@ Z);
 
 
 .btn-primary:hover {
-  background-color: rgb(170, 152, 8);
+  background-color: var(--accent-yellow-dark);
 }
 
 .price {
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: var(--text-white);
 }
 
 /* ===== PAGE CENTER ===== */
@@ -404,7 +540,7 @@ Z);
 /* ===== CALCULATOR ===== */
 .hisoblagich {
 
-  color: white;
+  color: var(--text-white);
   border-radius: 16px;
 
   width: 90%;
@@ -417,17 +553,17 @@ Z);
   border-radius: 20px;
   max-width: 900px;
   margin: 20px auto;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 var(--primary-dark);
+  border: 1px solid var(--border-glass);
 
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border-glass);
 
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px var(--shadow-soft);
 }
 
 .boshlanish {
@@ -442,12 +578,12 @@ Z);
   font-size: 24px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
-  color: white;
+  color: var(--text-white);
 }
 
 .tozalash {
-  background-color: rgb(187, 169, 10);
-  color: white;
+  background-color: var(--accent-yellow);
+  color: var(--text-white);
   border-radius: 16px;
   padding: 8px 12px;
   border: none;
@@ -455,7 +591,7 @@ Z);
 }
 
 .tozalash:hover {
-  background-color: rgb(170, 152, 8);
+  background-color: var(--accent-yellow-dark);
 }
 
 .asosiy {
@@ -471,7 +607,7 @@ Z);
 }
 
 .shahar-tanla:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px var(--shadow-card);
 }
 
 .daraja {
@@ -498,22 +634,22 @@ Z);
 }
 
 .bronza { 
-  background-color: rgb(205, 127, 50);
-  color: white;
+  background-color: var(--bronze);
+  color: var(--text-white);
 }
 
 .kumush {
-  background-color: rgb(192, 192, 192);
-  color: white;
+  background-color: var(--silver);
+  color: var(--text-white);
 }
 
 .oltin {
-  background-color: rgb(190, 167, 35);
-  color: white;
+  background-color: var(--gold);
+  color: var(--text-white);
 }
 
 .platina {
-  background-color: rgb(229, 228, 226);
+  background-color: var(--platinum);
   color: black;
 }
 
@@ -532,15 +668,15 @@ Z);
   padding: 12px;
   border-radius: 14px;
   border: none;
-  background-color: rgb(187, 169, 10);
-  color: white;
+  background-color: var(--accent-yellow);
+  color: var(--text-white);
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
 }
 
 .hisobla:hover {
-  background-color: rgb(170, 152, 8);
+  background-color: var(--accent-yellow-dark);
 }
 
 /* ===== REVIEWS ===== */
@@ -559,12 +695,12 @@ Z);
 
 .bosh {
   font-size: 32px;
-  color: white;
+  color: var(--text-white);
   margin-bottom: 10px;
 }
 
 .qoshimcha {
-  color: #fff;
+  color: var(--text-white);
   font-size: 16px;
   margin-bottom: 30px;
 }
@@ -582,10 +718,10 @@ Z);
 
 .fikrlar-bobi {
   width: 350px;
-  background: white;
+  background: var(--text-white);
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px var(--shadow-card);
   display: flex;
   flex-direction: column;
 }
@@ -603,19 +739,19 @@ Z);
   height: 54px;
   border-radius: 50%;
   object-fit: cover;
-  border: steelblue 2px solid;
-  box-shadow: 1px 1px 30px rgb(115, 55, 212);
+  border: var(--primary-light) 2px solid;
+  box-shadow: 1px 1px 30px var(--primary);
   flex-shrink: 0;
 }
 
 .foydalanuvchi-ismi {
-  color: #1f477a;
+  color: var(--bg-card);
   font-weight: bold;
   font-size: 16px;
 }
 
 .manzili {
-  color: #666;
+  color: var(--text-gray);
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -629,30 +765,52 @@ Z);
 }
 
 .yulduzlar {
-  color: gold;
+  color: var(--gold);
   font-size: 20px;
 }
 
 .sharh {
   font-family: 'Times New Roman', Times, serif;
-  color: #333;
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
 .sayohat-manzili {
   font-weight: bold;
   font-size: 18px;
-  color: #1f477a;
+  color: var(--bg-card);
   margin-top: 10px;
 }
 
 /* ===== TABLET (768px - 1024px) ===== */
 @media (max-width: 1024px) {
+  .navigation{
+    background: #bde0eb;
+  }
+
+
   .mashhur-joylar, 
   .xamyonbob-joylar, 
   .tropik-joylar,
   .Tabiat-joylar {
     font-size: 24px;
+  }
+  .kerak{ 
+    display: grid;
+  }
+  .orta1{
+    display: none;
+  }
+  .select{
+    position: absolute;
+    height: 10px;
+
+    
+  }
+  #theme-switch{
+    position: absolute;
+    top: 35px;
+    right: 140px;
   }
 
   .card {
@@ -675,9 +833,23 @@ Z);
     gap: 12px;
     height: 100px;
   }
+  .orta1{
+    display: none;
+  }
+  .kerak{
+    display: grid;
 
+  }
+  #theme-switch{
+    position: absolute;
+    top: 15px;
+    right: 80px;
+  }
   .logo {
     font-size: 24px;
+    position: absolute;
+    left: 150px;
+    top: 7px;
   }
 
   .nav-btn-Aloqa,
@@ -703,6 +875,8 @@ Z);
   position: absolute;
   top: 50px;
   right: 10px;
+  height: 35px;
+  width: 40px;
 
 }
 .profile-btn{
@@ -838,7 +1012,12 @@ Z);
   .logo {
     font-size: 20px;
   }
-
+  .kerak{
+    display: grid;
+  }
+.orta1{
+    display: none;
+  }
   .nav-btn-Aloqa,
   .nav-btn-Bosh-sahifa {
     font-size: 13px;

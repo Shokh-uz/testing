@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP</title>
-    <link rel="stylesheet" href="chatting.css">
-    </head>
-    <body>
-        <div class="chat-container">
-         <div class="user-chat-box">
-                <img src="user-image.png" alt="User image" id="userImage" width="50">
-                <div class="user-chat-area">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa alias rerum distinctio quis expedita, libero iure minima aut. Nemo voluptatum veniam sint laudantium nisi recusandae, et iusto odio autem?
+  <meta charset="UTF-8" />
+  <title>Chat Box</title>
+  <link rel="stylesheet" href="chatting.css">
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="chat-container">
+  <div class="chat-header">Chat</div>
 
-             </div>
-            </div>
-            <div class="ai-chat-box">
-                <img src="ai-avatar.png" alt="AI image" id="aiImage"width="50">
-                <div class="ai-chat-area">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis neque velit a ab sed necessitatibus illo excepturi, adipisci consectetur iusto recusandae. Voluptate impedit error dolorem ab officia, quam incidunt.
-            </div>
-         </div>
-        <div class="prompt-area">
-            <input type="text" id="prompt" placeholder="Xabar...">
-            <button id="image"><img src="" alt=""></button>
-            <button id="submit">Yuborish</button>
-        </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="message ai">Salom 👋</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Xabar yoz..." />
+    <button id="sendBtn">➤</button>
+  </div>
+</div>
+
 <script src="chatting.js"></script>
-    </body>
-    </html>
+</body>
+</html>

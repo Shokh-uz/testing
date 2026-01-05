@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To‘lov</title>
+  <link rel="stylesheet" href="buyurtma.css">
+</head>
+<body>
+<div class="form-container">
+<div class="form-col">
+<div class="form-title">
+  <span class="h2">To‘lov usulini tanlang</span>
+</div>
+  <!-- TO‘LOV TURI -->
+  <div class="btn-box">
+   
+      <button class="btn btn-1" id="full">
+      To‘liq to‘lov
+      </button>
+  
+      <button class="btn btn-2" id="not-full">
+      TNPL (bo‘lib to‘lash)
+      </button>
+   
+  </div>
+  </div>
+  <div class="all-forms">
+<div class="full-form">
+  <!-- KARTA TANLASH -->
+  <div class="dropdown">
+  <div class="select">
+    <span class="selected">Karta turini tanlang</span>
+    <div class="caret"></div>
+  </div>
+  <ul class="menu">
+    <li class="active">Uzcard</li>
+    <li>Humo</li>
+    <li>Visa</li>
+  </ul>
+</div>
+
+  <!-- KARTA MAʼLUMOTLARI -->
+  <div class="form-inputs" id="cardInputs">
+    <input type="text" id="cardNumber" placeholder="Karta raqami" minlength="16" maxlength="16" required>
+    <input type="text" id="cardDate" placeholder="MM/YY" required>
+    <input type="password" id="cardCVC" placeholder="CVC" required>
+  </div>
+
+  <!-- PAYMENT SYSTEM -->
+  <div class="section payment-systems">
+    <label><input type="radio" name="system"> Payme</label>
+    <label><input type="radio" name="system"> Click</label>
+    <label><input type="radio" name="system"> Xazna</label>
+  </div>
+
+<!-- QOIDALAR -->
+<div class="rules">
+  <label class="rule-check">
+    <input type="checkbox" id="agree">
+    <span class="checkmark"></span>
+
+    <span class="rule-text">
+      To‘lov qoidalari bilan tanishdim va roziman
+      <a type="button" class="checkbox-info" href="">
+        Qoidalarni ko‘rish
+      </a>
+    </span>
+  </label>
+
+  <p class="warning">
+    ⚠️ Qoidalarga rozi bo‘lmasangiz, to‘lov amalga oshirilmaydi
+  </p>
+</div>
+
+
+  <button id="payBtn">To‘lov qilish</button>
+
+</div>
+</div>
+
+
+
+<!-- TNPL -->
+
+  <div class="not-full-form">
+  <!-- KARTA TANLASH -->
+  <div class="dropdown">
+  <div class="select">
+    <span class="selected">Karta turini tanlang</span>
+    <div class="caret"></div>
+  </div>
+  <ul class="menu">
+    <li class="active">Uzcard</li>
+    <li>Humo</li>
+    <li>Visa</li>
+  </ul>
+</div>
+
+  <!-- KARTA MAʼLUMOTLARI -->
+  <div class="section3" id="cardInputs">
+    <input type="text" id="cardNumber" placeholder="Karta raqami" minlength="16" maxlength="16">
+    <input type="text" id="cardDate" placeholder="MM/YY">
+    <input type="password" id="cardCVC" placeholder="CVC">
+  </div>
+
+  <!-- PAYMENT SYSTEM -->
+  <div class="section payment-systems">
+    <label><input type="radio" name="system"> Payme</label>
+    <label><input type="radio" name="system"> Click</label>
+    <label><input type="radio" name="system"> Xazna</label>
+  </div>
+
+<!-- QOIDALAR -->
+<div class="rules">
+  <label class="rule-check">
+    <input type="checkbox" id="agree">
+    <span class="checkmark"></span>
+
+    <span class="rule-text">
+      To‘lov qoidalari bilan tanishdim va roziman
+      <a type="button" class="checkbox-info" href="">
+        Qoidalarni ko‘rish
+      </a>
+    </span>
+  </label>
+
+  <p class="warning">
+    ⚠️ Qoidalarga rozi bo‘lmasangiz, to‘lov amalga oshirilmaydi
+  </p>
+</div>
+
+
+  <button id="payBtn">To‘lov qilish</button>
+
+</div>
+</div>
+</div>
+</div>
+<script src="buyurtma.js"></script>
+</body>
+</html>

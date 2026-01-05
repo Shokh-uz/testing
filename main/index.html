@@ -9,6 +9,10 @@
 
 <body>
 <header class="navigation">
+  <button id="theme-switch">
+    <ion-icon name="sunny-outline"></ion-icon>
+  <ion-icon name="moon-outline"></ion-icon>
+  </button>
   <nav class="navbar">
 <div class="tel1">
     <div class="logo">MVP</div>
@@ -16,6 +20,18 @@
     <a href="#" class="nav-btn-Bosh-sahifa">Bosh sahifa</a>
     <a href="#" class="nav-btn-Aloqa">Aloqa</a>
     </div>
+    <div class="orta1">
+<div class="qidiruv-qator">
+<div class="qidiruv-qism">
+<input class="qidiruv" type="text" placeholder="Qayerga?">
+<input class="qachon" type="date">
+<input class="odam-soni" type="number" min="1" max="4+" placeholder="Necha kishi?">
+<button class="qidiruv-btn">
+  Qidiruv
+</button>
+</div>
+</div>
+</div>
     <div class="tel">
 <div class="dropdown">
   <div class="select">
@@ -41,14 +57,19 @@
   </ul>
 </div>
 </div>
-<a href="../cart/cart.html" id="cart">🛒</a>
+<a href="../cart/cart.html" id="cart">
+  <ion-icon name="cart-outline"></ion-icon>
+</a>
 
-
-    <a href="../kirish/kirish.html" class="profile-btn">👤</a>
+    <a href="../kirish/kirish.html" class="profile-btn">
+      <ion-icon name="person-outline"></ion-icon>
+    </a>
 
   </nav>
 </header>
+
 <div class="orta">
+  <div class="kerak">
 <div class="qidiruv-qator">
 <div class="qidiruv-qism">
 <input class="qidiruv" type="text" placeholder="Qayerga?">
@@ -57,6 +78,7 @@
 <button class="qidiruv-btn">
   Qidiruv
 </button>
+</div>
 </div>
 </div>
 <div class="Birinchi-qator">
@@ -87,7 +109,8 @@
         <button class="btn-primary add-to-cart"
                   data-id="1"
                   data-title="The City That Never Sleeps"
-                  data-price="1299">
+                  data-price="1299"
+                  onclick="window.location.href='../buyurtma/buyurtma.html'">
   Buyurtma
 </button>
       </div>
@@ -120,7 +143,7 @@
     <div class="card-bottom">
       <span class="price">$1,299</span>
       <div class="card-actions">
-        <button class="btn-outline" onclick="window.location.href='chatting.html'">
+        <button class="btn-outline" onclick="window.location.href='../chatting/chatting.html'">
           So'rang
         </button>
         <button class="btn-primary">Buyurtma</button>
@@ -153,7 +176,7 @@
     <div class="card-bottom">
       <span class="price">$1,299</span>
       <div class="card-actions">
-        <button class="btn-outline" onclick="window.location.href='chatting.html'">
+        <button class="btn-outline" onclick="window.location.href='../chatting/chatting.html'">
           So'rang
         </button>
         <button class="btn-primary">Buyurtma</button>
@@ -186,7 +209,7 @@
     <div class="card-bottom">
       <span class="price">$1,299</span>
       <div class="card-actions">
-        <button class="btn-outline" onclick="window.location.href='chatting.html'">
+        <button class="btn-outline" onclick="window.location.href='../chatting/chatting.html'">
           So'rang
         </button>
         <button class="btn-primary">Buyurtma</button>
@@ -273,5 +296,7 @@
 </div>
 
 <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
